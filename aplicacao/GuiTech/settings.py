@@ -79,10 +79,11 @@ WSGI_APPLICATION = 'GuiTech.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'produtos',
+        'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': '529440',
-        "HOST": 'localhost'
+        "HOST": 'localhost',
+        "PORT": '5433'
     }
 }
 

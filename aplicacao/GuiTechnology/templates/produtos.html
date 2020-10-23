@@ -35,9 +35,9 @@
             <div class="row">
                 <div class="col-12 col-lg-5">
                     <select name="select1" id="select1">
-                        <option value="1">Cabos USB e USBC</option>
-                        <option value="1">Heafset</option>
+                        <option value="1">Headseat</option>
                         <option value="1">Fones de ouvido</option>
+                        <option value="1">colocar algo aqui</option>
                     </select>
                 </div>
                 <div class="col-12 col-lg-2 text-right">
@@ -53,7 +53,7 @@
     <div class="row">
         <div class="col-12">
             <div class="receipe-slider owl-carousel">
-                <img src="{% static 'img/bg-img/tomate_banner.jpg' %}">
+                <img src="{% static '#' %}">
             </div>
         </div>
     </div>
@@ -66,13 +66,12 @@
         <div class="row">
             <div class="col-12 col-md-8">
                 <div class="receipe-headline my-5">
-                    <span>INSERIR A DATA DO SISTEMA AQUI</span>
-                    <h2>Nome do produto</h2>
-                    <div class="receipe-duration">
-                        <h6>colocar algo aqui</h6>
-                        <h6>colocar algo aqui</h6>
-                        <h6>colocar algo aqui</h6>
-                        <h6>colocar algo aqui</h6>
+                    <span>{{produto.date_produto}}</span>
+                    <h2>Nome produto: {{produto.nome_produto}}</h2>
+                    <div
+                     class="receipe-duration">
+                        <h6>Marca: {{produto.marca}}</h6>
+                        <h6>Preço: {{produto.preco}}</h6>
                     </div>
                 </div>
             </div>
@@ -90,15 +89,10 @@
 
                 <!-- Ingredientes -->
                 <div class="col-12 col-lg-4">
-                    <div class="ingredients">
-                        <h4>colocar algo aqui</h4>
-                        <div class="ingredients">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui.
-                                Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in
-                                iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus.
-                                Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                            </p>
-                            </p>
+                    <div class="detalhes-produto">
+                        <h4>Detalhes</h4>
+                        <div class="detalhes-produto">
+                            <p>{{produto.detalhes}}</p>
                         </div>
                     </div>
                 </div>

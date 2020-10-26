@@ -37,7 +37,11 @@
                 <!-- Single Best Receipe Area -->
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-best-receipe-area mb-30">
-                        <img src="{% static 'img/bg-img/bannerTech.jpeg' %}" alt="">
+                        {% if produto.foto_produto == '' %}
+                            <img src="{% static 'img/bg-img/bannerTech.jpeg' %}" alt="">
+                        {% else %}
+                            <img src="{{ produto.foto_produto.url }}" alt="">
+                        {% endif %}
                         <div class="receipe-content">
                             <a href="{% url 'produto' produto.id %}">
                                 <h5>{{ produto.nome_produto }}</h5>

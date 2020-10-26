@@ -11,6 +11,7 @@
 
 <!-- Search Wrapper -->
 <div class="search-wrapper">
+
     <!-- Close Btn -->
     <div class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></div>
 
@@ -53,7 +54,11 @@
     <div class="row">
         <div class="col-12">
             <div class="receipe-slider owl-carousel">
-                <img src="{% static 'img/bg-img/img_principal.jpg' %}">
+                {% if produto.foto_produto == '' %}
+                    <img src="{% static 'img/bg-img/img_principal.jpg' %}">
+                {% else %}
+                    <img src="{{ produto.foto_produto.url }}" alt="">
+                {% endif %}
             </div>
         </div>
     </div>

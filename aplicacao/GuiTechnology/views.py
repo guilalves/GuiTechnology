@@ -1,3 +1,4 @@
+from django.http import request
 from django.shortcuts import render, get_list_or_404, get_object_or_404
 from .models import Produto
 
@@ -16,3 +17,6 @@ def produto(request, produto_id):
         'produto': produto
     }
     return render(request,'produtos.html', produto_a_exibir)
+
+def buscar(request):
+    return render(request, 'buscar.html')

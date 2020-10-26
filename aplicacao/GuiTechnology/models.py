@@ -11,3 +11,6 @@ class Produto(models.Model):
     date_produto = models.DateTimeField(default=datetime.now, blank=True)
     marca = models.CharField(max_length=200)
     foto_produto = models.ImageField(upload_to='fotos/%d/%m/%Y/', blank=True)
+    
+    def __str__(self):
+        return self.nome_produto

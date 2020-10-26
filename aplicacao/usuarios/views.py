@@ -28,10 +28,19 @@ def cadastro(request):
         return render(request,'usuarios/cadastro.html')
 
 def login(request):
+    
+    if request.method == 'POST':
+        email = request.POST['email']
+        senha = request.POST['senha']
+        if email == "" or senha == "":
+            print('OS CAMAPOS NÃO PODE FICAR EM BRANCO')
+            return redirect('login')
+        print(email, senha)
+        return redirect('dashboard')
     return render(request,'usuarios/login.html')
 
 def logout(request):
     pass
 
 def dashboard(request):
-    pass
+    return render(request, 'usuarios/dashboard.html')

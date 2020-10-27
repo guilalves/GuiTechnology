@@ -13,7 +13,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os
 import sys
-
+from django .contrib.messages import constants as messages
+from django.contrib.messages.constants import SUCCESS
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -135,3 +136,9 @@ STATICFILES_DIRS = [
 #Media
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# Messages
+MESSAGES_TAGS = {
+    messages.ERROR: 'danger',
+    messages.SUCCESS: 'success',
+}

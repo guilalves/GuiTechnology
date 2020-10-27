@@ -1,4 +1,3 @@
-import pessoas
 from django.db import models
 from datetime import datetime
 from pessoas.models import Pessoa

@@ -1,8 +1,9 @@
 from django.contrib.messages.api import error
 from django.http import request
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib import auth, messages
+from GuiTechnology.models import Produto
 
 def cadastro(request):
     if request.method == 'POST':
@@ -51,15 +52,20 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return redirect('index')
-
-def dashboard(request):
-    if request.user.is_authenticated:
-        return render(request, 'usuarios/dashboard.html')
-    else:
-        return redirect('index')
     
 def campo_vazio(campo):
     return not campo.strip()
 
 def senhas_nao_iguais(senha, senha2):
     return senha != senha2
+
+def dashboard(request):
+    if request.user.is_authenticated:
+        produtos = Produto.objects.all()
+    
+        dados = {
+            'produtos' : produtos
+            }
+        return render(request,'index.html',dados)
+    else:
+        return redirect('index')

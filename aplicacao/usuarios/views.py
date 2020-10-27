@@ -45,7 +45,6 @@ def login(request):
             user = auth.authenticate(request, username=nome, password=senha)
             if user is not None:
                 auth.login(request, user)
-                messages.success(request, 'Login realizado com sucesso')
                 return redirect('dashboard')
     return render(request,'usuarios/login.html')
 

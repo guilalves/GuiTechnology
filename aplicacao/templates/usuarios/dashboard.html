@@ -12,15 +12,15 @@
     {% include 'partials/_menu.html' %}
 
     <div class="contact-area section-padding-0-80">
-   <div class="container">
-       <div class="row">
-           <div class="col-12">
-               <div class="section-heading">
-                   <h3>Olá, {{ user.username }} seja bem vindo a GuiTech</h3>
-               </div>
-           </div>
-       </div>
-   </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading">
+                    <h3>Olá, {{ user.username }} seja bem vindo a GuiTech</h3>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- ##### Best Receipe Area Start ##### -->
@@ -38,16 +38,16 @@
                     {% else %}
                         <img src="{{ produto.foto_produto.url }}" alt="">
                     {% endif %}
-                    <div class="receipe-content">
+                        <div class="receipe-content">
                         <a href="{% url 'produto' produto.id %}">
-                            <h5>{{ produto.nome_produto }}</h5>
-                        </a>
-                    </div>
+                        <h5>{{ produto.nome_produto }}</h5>
+                    </a>
                 </div>
             </div>
-            {% endfor %}
-            {% endif %}
         </div>
+        {% endfor %}
+        {% endif %}
+    </div>
 </section>
 
     {% include 'partials/_footer.html' %}

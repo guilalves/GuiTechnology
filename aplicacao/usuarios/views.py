@@ -66,6 +66,7 @@ def dashboard(request):
         dados = {
             'produtos' : produtos
             }
-        return render(request,'index.html',dados)
+        #return render(request,'index.html',dados)
+        return render(request, 'usuarios/dashboard.html', dados)
     else:
         return redirect('index')

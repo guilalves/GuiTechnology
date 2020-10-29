@@ -1,6 +1,6 @@
 {
     "compile-hero.disable-compile-files-on-did-save-code": true,
-    "python.pythonPath": "C:\\Users\\Administrador\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
+    "python.pythonPath": "C:\\Users\\guilh\\AppData\\Local\\Programs\\Python\\Python37-32\\python.exe",
     "python.linting.pylintArgs": [
         "--load-plugins=pylint_django"
     ],

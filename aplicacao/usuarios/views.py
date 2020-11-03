@@ -70,3 +70,15 @@ def dashboard(request):
         return render(request, 'usuarios/dashboard.html', dados)
     else:
         return redirect('index')
+
+def carrinho(request):
+    if request.user.is_authenticated:
+        produtos = Produto.objects.all()
+    
+        dados = {
+            'produtos' : produtos
+            }
+
+        return render(request, 'usuarios/carrinho.html', dados)
+    else:
+        return redirect('index')
